@@ -18,6 +18,7 @@
           @mkdir($this->getDataFolder());
           $this->saveResource('config.yml');
           $this->cfg = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
+          $this->getServer()->getPluginManager()->registerEvents(new ChatEvent($this), $this);
           $this->getLogger()->info(TF::GREEN . 'Enabled.');
       }
       
